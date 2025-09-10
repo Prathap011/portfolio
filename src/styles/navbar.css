@@ -1,0 +1,170 @@
+/* ============================= */
+/* 📍 Sidebar (Desktop) */
+/* ============================= */
+
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 50px;
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 20px; /* collapsed state for desktop */
+}
+
+.nav-link:hover {
+  background: #007bff;
+  color: #fff;
+  width: 100px;
+}
+
+.nav-link .icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link .label {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover .label {
+  opacity: 1;
+}
+
+/* ============================= */
+/* 📍 Active Link (Both Desktop & Mobile) */
+/* ============================= */
+.nav-link.active {
+  background: #007bff !important;
+  color: white !important;
+}
+
+.nav-link.active .label {
+  color: white !important;
+  opacity: 1; /* ensure label is visible on mobile */
+}
+
+/* ============================= */
+/* 📍 Mobile Toggle Button */
+/* ============================= */
+.mobile-menu-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 20px;
+  z-index: 2000;
+  display: none;
+  cursor: pointer;
+}
+
+/* ============================= */
+/* 📍 Mobile Drawer */
+/* ============================= */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 270px;
+  height: 100vh;
+  background: white;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
+  padding: 60px 20px 20px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1500;
+}
+
+.mobile-drawer.open {
+  left: 0;
+}
+
+.mobile-drawer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-drawer li {
+  margin-bottom: 15px;
+}
+
+.mobile-drawer .nav-link {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: #f0f0f0;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-drawer .nav-link .label {
+  font-size: 16px;
+  white-space: nowrap;
+  opacity: 1 !important; /* always show label on mobile */
+  color: black;
+}
+
+.mobile-drawer .nav-link:hover {
+  background: #007bff;
+  color: white;
+}
+
+.mobile-drawer .nav-link:hover .label {
+  color: white;
+}
+
+.mobile-drawer .icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================= */
+/* 📍 Responsive Breakpoints */
+/* ============================= */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}

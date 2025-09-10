@@ -1,0 +1,151 @@
+.resume-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns on desktop */
+  gap: 25px 50px;
+  padding: 60px 10%;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Columns */
+.left-column,
+.right-column {
+  min-width: 0; /* allow grid to evenly distribute space */
+}
+
+/* Section Headings */
+.section-heading {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 1.5rem;
+}
+
+.sub-heading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  color: #007bff;
+}
+
+/* Summary */
+.summary-text {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Timeline Base */
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 30px;
+  border-left: 2px solid #007bff;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 3px solid #007bff;
+  border-radius: 50%;
+}
+
+/* Timeline Content */
+.timeline-content h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: bold;
+}
+
+.timeline-content p {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.timeline-content em {
+  font-style: italic;
+  color: #666;
+}
+
+.timeline-content ul {
+  margin: 0.5rem 0 0 1rem;
+  padding: 0;
+}
+
+.timeline-content li {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+/* ============================= */
+/* 📱 Responsive Breakpoints     */
+/* ============================= */
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .resume-container {
+    grid-template-columns: 1fr; /* single column */
+    padding: 40px 5%;
+    gap: 40px;
+  }
+
+  .section-heading {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .sub-heading {
+    text-align: center;
+  }
+
+  .timeline-item {
+    padding-left: 25px;
+  }
+
+  .timeline-dot {
+    left: -7px;
+  }
+}
+
+/* Mobile phones (<= 600px) */
+@media (max-width: 600px) {
+  .resume-container {
+    padding: 30px 20px;
+  }
+
+  .section-heading {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-content p,
+  .timeline-content li {
+    font-size: 0.85rem;
+  }
+
+  .contact-list li {
+    font-size: 0.85rem;
+  }
+}
