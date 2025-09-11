@@ -55,6 +55,14 @@
   border-left: 2px solid #007bff;
 }
 
+.timeline-item2 {
+  position: relative;
+  margin-bottom: -0.4rem; 
+  padding-left: 30px;
+  padding-bottom: 10px;
+  border-left: 2px solid #007bff;
+}
+
 .timeline-dot {
   position: absolute;
   left: -10px;
@@ -122,7 +130,7 @@
   }
 
   .timeline-dot {
-    left: -7px;
+    left: -10px;
   }
 }
 

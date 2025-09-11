@@ -17,9 +17,9 @@ import About from "./components/About";
         <Hero />
          <About />
         <Skills />
-        {/* <Experience /> */}
-        {/* <Certifications /> */}
-        {/* <Contact /> */}
+        <Experience />
+        <Certifications />
+        <Contact />
         <Footer /> 
         </div>
     );

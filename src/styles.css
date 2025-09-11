@@ -1,0 +1,12 @@
+/* Remove default margin & padding */
+html, body, #app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensure no scrollbars unless needed */
+body {
+  overflow-x: hidden;
+}

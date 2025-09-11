@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const navItems = [
     { id: "home", label: "Home", icon: <FaHome /> },
-    { id: "skills", label: "About", icon: <FaUser /> },
+    { id: "about", label: "About", icon: <FaUser /> },
     { id: "resume", label: "Resume", icon: <FaFileAlt /> },
     { id: "education", label: "Portfolio", icon: <FaImage /> },
     { id: "certifications", label: "Certificates", icon: <FaListUl /> },
@@ -34,6 +34,7 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  
 
   return (
     <>
@@ -54,8 +55,10 @@ const Navbar = () => {
                 to={item.id}
                 smooth={true}
                 duration={600}
-                className={`nav-link ${selected === item.id ? "active" : ""}`}
-                onClick={() => setSelected(item.id)}
+                spy={true}                // 👈 track scroll position
+                activeClass="active"      // 👈 auto-add "active" when section is in view
+                className="nav-link"
+                onSetActive={() => setSelected(item.id)} // keep your state in sync
               >
                 <span className="icon">{item.icon}</span>
                 <span className="label">{item.label}</span>

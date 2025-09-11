@@ -1,4 +1,4 @@
-.section {
+/* .section {
   padding: 4rem 2rem;
   max-width: 1000px;
   margin: auto;
@@ -23,9 +23,8 @@
   border-radius: 2px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .section {
     text-align: center;
   }
-}
+} */

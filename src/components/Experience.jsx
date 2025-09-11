@@ -98,12 +98,12 @@ const EducationExperience = () => {
           </motion.div>
 
           {/* Education heading inside same timeline so the line continues */}
-          <h2 className="sub-heading">Education</h2>
+          <h2 className="section-heading">Education</h2>
 
           {education.map((item, i) => (
             <motion.div
               key={i}
-              className="timeline-item"
+              className="timeline-item timeline-item2"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
@@ -128,7 +128,7 @@ const EducationExperience = () => {
           {experience.map((job, i) => (
             <motion.div
               key={i}
-              className="timeline-item"
+              className="timeline-item timeline-item2"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
