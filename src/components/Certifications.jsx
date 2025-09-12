@@ -1,39 +1,15 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import "../styles/certifications.css";
-
-// const Certifications = () => {
-//   const certs = [
-//     "Oracle SQL - Udemy (Mar 2023)",
-//     "HTML, CSS, JavaScript & Bootstrap - Udemy (Mar 2023)",
-//     "AWS Academy Cloud Foundations (May 2022)"
-//   ];
-
-//   return (
-//     <section id="certifications" className="section">
-//       <h2>Certifications</h2>
-//       <ul>
-//         {certs.map((cert, i) => (
-//           <motion.li
-//             key={i}
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ delay: i * 0.2 }}
-//           >
-//             {cert}
-//           </motion.li>
-//         ))}
-//       </ul>
-//     </section>
-//   );
-// };
-
-// export default Certifications;
-
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/certifications.css";
-import { FaDatabase, FaCode, FaCloud, FaProjectDiagram, FaCalendarCheck, FaComments } from "react-icons/fa";
+import { 
+  FaDatabase, 
+  FaCode, 
+  FaCloud, 
+  FaProjectDiagram, 
+  FaCalendarCheck, 
+  FaComments 
+} from "react-icons/fa";
+import GlassIcons from "../animations/GlassIcons";
 
 const certifications = [
   {
@@ -68,6 +44,16 @@ const certifications = [
   }
 ];
 
+// One-to-one items (matches with certifications by index)
+const items = [
+  { icon: <FaDatabase />, color: 'blue', label: 'Files' },
+  { icon: <FaCode />, color: 'purple', label: 'Books' },
+  { icon: <FaCloud />, color: 'red', label: 'Health' },
+  { icon: <FaProjectDiagram />, color: 'indigo', label: 'Weather' },
+  { icon: <FaCalendarCheck />, color: 'orange', label: 'Notes' },
+  { icon: <FaComments />, color: 'green', label: 'Stats' },
+];
+
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
@@ -83,7 +69,9 @@ const Certifications = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            <div className="cert-icon">{cert.icon}</div>
+            {/* GlassIcons for each card */}
+            <GlassIcons items={[items[i]]} className="custom-class" />
+
             <h3>{cert.title}</h3>
             <p>Click to download certificate</p>
           </motion.a>
