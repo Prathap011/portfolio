@@ -56,6 +56,8 @@ const Contact = () => {
   };
 
   return (
+    <div className="contact-background">
+    <div className="contact-box">
     <section id="contact" className="section">
       <h2>Contact</h2>
       <p className="subtitle">
@@ -143,6 +145,8 @@ const Contact = () => {
         </motion.form>
       </div>
     </section>
+    </div>
+    </div>
   );
 };
 

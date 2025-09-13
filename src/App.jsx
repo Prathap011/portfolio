@@ -10,6 +10,7 @@ import "./styles.css";
 import React from 'react';
 import About from "./components/About";
 import Portfolio from "./components/Portfolio";
+import HeroScrollDemo from "./components/scroll";
 
 function App() {
     return (

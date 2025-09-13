@@ -1,10 +1,19 @@
 import React from "react";
 import "../styles/about.css";
 import ProfileCard from "../animations/ProfileCard";
+import GradientText from '../animations/GradientText';
 
 const About = () => {
   return (
     <section id="about" className="about-section">
+      <GradientText
+  colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+  animationSpeed={3}
+  showBorder={false}
+  className="custom-class"
+>
+  Add a splash of color!
+</GradientText>
       <h2 className="about-title">About</h2>
       <p className="about-subtitle">
         Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid

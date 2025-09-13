@@ -50,3 +50,7 @@
   border-radius: 5px;
   transition: width 0.8s ease-in-out;
 }
+
+.scroll-container{
+  padding: 20px;
+}

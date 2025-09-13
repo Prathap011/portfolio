@@ -8,14 +8,14 @@
 }
 
 .icon-btn {
-  background-color: transparent;
+  /* background-color: transparent; */
   outline: none;
   position: relative;
   width: 4.5em;
   height: 4.5em;
   perspective: 24em;
   transform-style: preserve-3d;
-  -webkit-tap-highlight-color: transparent;
+  /* -webkit-tap-highlight-color: transparent; */
 }
 
 .icon-btn__back,
@@ -44,7 +44,7 @@
 }
 
 .icon-btn__front {
-  background-color: hsla(0, 0%, 100%, 0.15);
+  /* background-color: hsla(0, 0%, 100%, 0.15); */
   box-shadow: 0 0 0 0.1em hsla(0, 0%, 100%, 0.3) inset;
   backdrop-filter: blur(0.75em);
   -webkit-backdrop-filter: blur(0.75em);
