@@ -10,6 +10,7 @@ import {
   FaComments 
 } from "react-icons/fa";
 import GlassIcons from "../animations/GlassIcons";
+import GradientText from '../animations/GradientText';
 
 const certifications = [
   {
@@ -57,7 +58,15 @@ const items = [
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
-      <h2>Certifications</h2>
+      
+      <GradientText
+              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+              animationSpeed={3}
+              showBorder={false}
+              className="about-title"
+            >
+              Certifications
+            </GradientText>
       <div className="cert-grid">
         {certifications.map((cert, i) => (
           <motion.a

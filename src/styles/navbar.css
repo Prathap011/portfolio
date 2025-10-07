@@ -62,6 +62,7 @@
 }
 
 .nav-link .label {
+  margin-left: 5px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }

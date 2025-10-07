@@ -1,13 +1,12 @@
 import React from "react";
 import "../styles/skills.css";
+import GradientText from '../animations/GradientText';
 
 const Skills = () => {
   const skills = [
-    { name: "Python", level: 95 },
-    { name: "Django", level: 90 },
-    { name: "FastAPI", level: 85 },
+    { name: "Python", level: 80 },
     { name: "React.js", level: 80 },
-    { name: "Flutter", level: 75 },
+    { name: "Flutter", level: 60 },
     { name: "MySQL", level: 90 },
     { name: "PostgreSQL", level: 85 },
     { name: "Docker", level: 70 },
@@ -16,7 +15,14 @@ const Skills = () => {
 
   return (
     <section id="skills" className="skills-section">
-      <h2 className="skills-title">Skills</h2>
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="about-title"
+      >
+        Skills
+      </GradientText>
       <p className="skills-subtitle">
         Proficient in designing, building, and maintaining web and mobile applications
       </p>

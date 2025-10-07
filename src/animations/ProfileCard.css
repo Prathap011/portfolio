@@ -387,9 +387,10 @@
 }
 
 .pc-contact-btn {
+  margin-left: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 8px 8px;
   font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);

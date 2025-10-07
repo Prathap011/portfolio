@@ -2,24 +2,23 @@ import React from "react";
 import "../styles/about.css";
 import ProfileCard from "../animations/ProfileCard";
 import GradientText from '../animations/GradientText';
+import { scroller } from "react-scroll";
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <GradientText
-  colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-  animationSpeed={3}
-  showBorder={false}
-  className="custom-class"
->
-  Add a splash of color!
-</GradientText>
-      <h2 className="about-title">About</h2>
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="about-title"
+      >
+        About
+      </GradientText>
       <p className="about-subtitle">
-        Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid
-        fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate.
-        Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
-        quidem hic quas.
+        Passionate about crafting efficient, scalable, and user-focused software solutions.
+        I enjoy solving complex problems through clean and creative code, bringing ideas
+        to life with modern technologies and a strong eye for detail.
       </p>
 
       <div className="about-container">
@@ -36,38 +35,46 @@ const About = () => {
             showUserInfo={true}
             enableTilt={true}
             enableMobileTilt={false}
-            onContactClick={() => console.log('Contact clicked')}
+            onContactClick={() =>
+              scroller.scrollTo("contact", {
+                duration: 800,
+                delay: 0,
+                smooth: "easeInOutQuart",
+                offset: -50, // adjust if navbar overlaps
+              })
+            }
           />
         </div>
 
         {/* Right - Content */}
         <div className="about-content">
-          <h3>Web Developer.</h3>
+          <h3>Software Developer</h3>
           <p className="about-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            I’m a software developer with a strong foundation in full-stack development.
+            My focus is on writing clean, maintainable code and building responsive,
+            high-performance web applications that enhance user experience.
           </p>
 
           <div className="about-info">
             <ul>
-              <li><strong>Birthday:</strong> 1 May 1995</li>
-              <li><strong>Website:</strong> www.example.com</li>
-              <li><strong>Phone:</strong> +123 456 7890</li>
-              <li><strong>City:</strong> New York, USA</li>
+              <li><strong>Birthday:</strong> 11 Aug 2002</li>
+              {/* <li><strong>Website:</strong> www.example.com</li> */}
+              <li><strong>Phone:</strong> +91-6369969439</li>
+              <li><strong>City:</strong> Ammapet, Salem</li>
+              <li><strong>Language:</strong> Tamil and English</li>
             </ul>
             <ul>
-              <li><strong>Age:</strong> 30</li>
-              <li><strong>Degree:</strong> Master</li>
-              <li><strong>Email:</strong> email@example.com</li>
+              <li><strong>Age:</strong> 24</li>
+              <li><strong>Degree:</strong> Engineering</li>
+              <li><strong>Email:</strong> vjprathap35@gmail.com</li>
               <li><strong>Freelance:</strong> Available</li>
             </ul>
           </div>
 
           <p className="about-footer">
-            Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam
-            sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore.
-            Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur
-            qui quia repellendus itaque neque.
+            I’m constantly learning and exploring new technologies to stay ahead in the
+            ever-evolving tech landscape. My goal is to create digital experiences that are
+            functional, elegant, and meaningful.
           </p>
         </div>
       </div>

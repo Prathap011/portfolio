@@ -44,15 +44,15 @@ const Hero = () => {
         />
 
         <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          // initial={{ opacity: 0, y: 40 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 1 }}
         >
           I'm{" "}
           <span className="role">
             <Typewriter
               words={[
-                "Software Developer",
+                "Full Stack Developer",
                 "Freelancer",
                 "Mobile App Developer",
                 "Gamer",

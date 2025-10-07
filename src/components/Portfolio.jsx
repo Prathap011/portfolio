@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import "../styles/portfolio.css";
 import React from "react";
+import GradientText from '../animations/GradientText';
 
 const portfolioData = [
   {
@@ -52,7 +53,14 @@ const cardVariants = {
 export default function Portfolio() {
   return (
       <section className="portfolio-section">
-        <h2 className="portfolio-title">Portfolio</h2>
+         <GradientText
+                      colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                      animationSpeed={3}
+                      showBorder={false}
+                      className="about-title"
+                    >
+                      Portfolio
+                    </GradientText>
         <p className="portfolio-subtitle">
           Some of my recent works with creative ideas and modern design.
         </p>

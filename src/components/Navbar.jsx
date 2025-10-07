@@ -57,7 +57,7 @@ const Navbar = () => {
                 duration={600}
                 spy={true}                // 👈 track scroll position
                 activeClass="active"      // 👈 auto-add "active" when section is in view
-                className="nav-link"
+                className={`nav-link ${selected === item.id ? "active" : ""}`}
                 onSetActive={() => setSelected(item.id)} // keep your state in sync
               >
                 <span className="icon">{item.icon}</span>

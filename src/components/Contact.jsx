@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import "../styles/contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import GradientText from '../animations/GradientText';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,95 +58,103 @@ const Contact = () => {
 
   return (
     <div className="contact-background">
-    <div className="contact-box">
-    <section id="contact" className="section">
-      <h2>Contact</h2>
-      <p className="subtitle">
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
-      </p>
+      <div className="contact-box">
+        <section id="contact" className="section">
+          <GradientText
+            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+            animationSpeed={3}
+            showBorder={false}
+            className="about-title"
+          >
+            Contact
+          </GradientText>
+          <p className="subtitle">
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+            consectetur velit
+          </p>
 
-      <div className="contact-container">
-        {/* Left Column - Info */}
-        <motion.div
-          className="contact-details"
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="info-box">
-            <i><FaMapMarkerAlt /></i>
-            <div>
-              <h4>Address</h4>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
+          <div className="contact-container">
+            {/* Left Column - Info */}
+            <motion.div
+              className="contact-details"
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="info-box">
+                <i><FaMapMarkerAlt /></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>42-1/23 Thiyagi Nadesan Street-1</p>
+                  <p>Ammapet, Salem - 636003</p>
+                </div>
+              </div>
+
+              <div className="info-box">
+                <i><FaPhoneAlt /></i>
+                <div>
+                  <h4>Call Us</h4>
+                  <p>+91-6369969439</p>
+                </div>
+              </div>
+
+              <div className="info-box">
+                <i><FaEnvelope /></i>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>vjprathap35@gmail.com</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Form */}
+            <motion.form
+              className="contact-form"
+              onSubmit={sendEmail}
+              initial={{ opacity: 0, x: 10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="form-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleChange}
+              />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+
+              <button type="submit">Send Message</button>
+              {status && <p className="status">{status}</p>}
+            </motion.form>
           </div>
-
-          <div className="info-box">
-            <i><FaPhoneAlt /></i>
-            <div>
-              <h4>Call Us</h4>
-              <p>+91-6369969439</p>
-            </div>
-          </div>
-
-          <div className="info-box">
-            <i><FaEnvelope /></i>
-            <div>
-              <h4>Email Us</h4>
-              <p>vjprathap35@gmail.com</p>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right Column - Form */}
-        <motion.form
-          className="contact-form"
-          onSubmit={sendEmail}
-          initial={{ opacity: 0, x: 10 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="form-row">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={formData.subject}
-            onChange={handleChange}
-          />
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-
-          <button type="submit">Send Message</button>
-          {status && <p className="status">{status}</p>}
-        </motion.form>
+        </section>
       </div>
-    </section>
-    </div>
     </div>
   );
 };
