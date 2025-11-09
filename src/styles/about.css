@@ -84,6 +84,15 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .about-img {
+  margin-top: 0px;
+  margin-left: 10%;
+}
+
+.about-img img {
+  max-width: 300px;
+  border-radius: 8px;
+}
   .about-container {
     flex-direction: column;
     text-align: center;
@@ -97,4 +106,8 @@
   .about-info ul {
     margin-bottom: 15px;
   }
+  .about-content {
+  flex: 1;
+  min-width: 0px;
+}
 }

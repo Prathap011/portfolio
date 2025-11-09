@@ -40,7 +40,7 @@ const About = () => {
                 duration: 800,
                 delay: 0,
                 smooth: "easeInOutQuart",
-                offset: -50, // adjust if navbar overlaps
+                offset: -50, 
               })
             }
           />
@@ -57,10 +57,10 @@ const About = () => {
 
           <div className="about-info">
             <ul>
-              <li><strong>Birthday:</strong> 11 Aug 2002</li>
               {/* <li><strong>Website:</strong> www.example.com</li> */}
               <li><strong>Phone:</strong> +91-6369969439</li>
-              <li><strong>City:</strong> Ammapet, Salem</li>
+              <li><strong>Birthday:</strong> 11 Aug 2002</li>
+              <li><strong>City:</strong> Salem</li>
               <li><strong>Language:</strong> Tamil and English</li>
             </ul>
             <ul>

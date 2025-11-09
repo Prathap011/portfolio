@@ -14,6 +14,7 @@ import "../styles/navbar.css";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("home");
 
   const navItems = [
@@ -34,17 +35,21 @@ const Navbar = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
 
   return (
     <>
       {/* Mobile toggle button */}
       <div
-        className="mobile-menu-icon"
-        onClick={() => setDrawerOpen(!drawerOpen)}
+        className={`mobile-menu-icon ${isOpen ? "right" : "left"}`}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          setDrawerOpen(!drawerOpen);
+        }}
       >
-        {drawerOpen ? <FaTimes /> : <FaBars />}
+        {isOpen ? <FaTimes /> : <FaBars />}
       </div>
+
 
       {/* Desktop Sidebar */}
       <nav className="sidebar">

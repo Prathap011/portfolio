@@ -7,7 +7,7 @@ const EducationExperience = () => {
     {
       degree: "Electronics and Communication Engineering",
       school: "Knowledge Institute Of Technology",
-      period: "Sep 2018 - May 2022",
+      period: "Jul 2018 - May 2022",
       score: "CGPA – 8.41"
     },
     {
@@ -23,40 +23,47 @@ const EducationExperience = () => {
       score: "93%"
     }
   ];
+   const job = [
+    {
+      role: "Software Developer",
+      company: "JustLogix Infotech Private Limited",
+      period: "Oct 2023 – Ongoing",
+      points: [
+        "Gaining hands-on experience in full-stack development using Python (FastAPI, Django), React.js, and databases like MySQL and PostgreSQL, including building and deploying scalable web applications on AWS.",
+        "Developing RESTful APIs, integrating front-end and back-end systems, and improving code quality through unit testing, Git/GitHub, and Agile collaboration on real-time projects."
+      ]
+    }
+  ];
 
   const experience = [
     {
-      role: "Backend Developer",
+      role: "Python (FastAPI)",
       company: "Gohawk Application",
       period: "Aug 2025 – Present",
       points: [
-        "Developed REST APIs with FastAPI",
-        "Built live product demo with video calls",
-        "Integrated secure checkout",
-        "Improved DB queries by 20%",
-        "Implemented JWT authentication"
+        "Built an e-commerce platform enabling buyers, vendors, and admins to interact, allowing buyers to purchase products and track orders seamlessly. Vendors can showcase products through live video demos, and buyers can purchase directly during live calls with secure checkout and authentication.",
+        "Integrated a vendor chatbot powered by a pretrained model to assist with product uploads and management.",
+        "Implemented OpenAI’s pretrained image detection API to automatically validate and categorize product images."
       ]
     },
     {
-      role: "Full Stack Developer",
+      role: "Python (FastAPI), Flutter",
       company: "JustPlay",
       period: "Nov 2024 – Jun 2025",
       points: [
-        "Developed turf booking app with Flutter",
-        "Built backend APIs with FastAPI",
-        "Optimized SQL queries",
-        "Improved system stability"
+        "Developed a turf booking platform with roles for buyers, turf owners, and admins, enabling turf owners to register and manage turf details while buyers can book turfs through the website and mobile app.",
+        "Built the buyer mobile application using Flutter for Android and iOS, and implemented backend APIs with FastAPI for authentication, bookings, payments, and schedule management.",
+        "Optimized SQL queries for real-time availability checks and improved system performance while contributing to Agile sprint planning and debugging activities.",
       ]
     },
     {
-      role: "Software Developer",
+      role: "Python (Django), React js",
       company: "Job Portal",
       period: "Dec 2023 – Feb 2024",
       points: [
-        "Developed job portal with Django & React",
-        "Implemented search and filter",
-        "Secured with JWT authentication",
-        "Deployed on AWS with CI/CD"
+        "Developed a job portal application connecting recruiters and job seekers.",
+        "Built modules for job posting, candidate profiles, and resume uploads with advanced search and filter features. ",
+        "Secured the platform using JWT authentication and role-based access control."
       ]
     }
   ];
@@ -85,10 +92,7 @@ const EducationExperience = () => {
               <div className="timeline-dot" />
               <div className="timeline-content">
                 <p className="summary-text">
-                  Software Developer with 2 years of experience in designing, developing, and maintaining web
-                  applications. Proficient in Python, Django, FastAPI, and SQL. Skilled in Flutter for mobile development.
-                  Adept at problem-solving, debugging, and collaborating with cross-functional teams to deliver high-
-                  quality software solutions.
+                  Full Stack Developer with hands-on experience in React.js, Python, and SQL. Built multiple end-to-end projects featuring API integration, responsive UI design, and database management. Quick to learn, adaptive to modern tech stacks, and eager to take on real-world challenges in full stack development.
                 </p>
                 {/* <ul className="contact-list">
                   <li><i className="fa fa-map-marker" aria-hidden="true"></i> Portland par 127, Orlando, FL</li>
@@ -97,6 +101,34 @@ const EducationExperience = () => {
                 </ul> */}
               </div>
             </motion.div>
+
+            
+
+            {/* Summary as a timeline item */}
+<div className="left-column">
+         <h2 className="section-heading">Professional Experience</h2>
+
+          <div className="timeline">
+            {job.map((job, i) => (
+              <motion.div
+                key={i}
+                className="timeline-item timeline-item2"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+              >
+                <div className="timeline-dot" />
+                <div className="timeline-content">
+                  <h3>{job.company} - {job.role}</h3>
+                  <p className="period"><i>{job.period}</i></p>
+                  <ul>
+                    {job.points.map((p, idx) => <li key={idx}>{p}</li>)}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
 
             {/* Education heading inside same timeline so the line continues */}
             <h2 className="section-heading">Education</h2>
@@ -113,17 +145,18 @@ const EducationExperience = () => {
                 <div className="timeline-content">
                   <h3>{item.degree}</h3>
                   <p className="period"><i>{item.period}</i></p>
-                  <p className="school"><em>{item.school}</em></p>
-                  <p className="score">{item.score}</p>
+                  <p className="school"><em>{item.school}</em> - {item.score}</p>
+                  {/* <p className="score">{item.score}</p> */}
                 </div>
               </motion.div>
             ))}
+            
           </div>
         </div>
 
         {/* RIGHT: experience timeline */}
         <div className="right-column">
-          <h2 className="section-heading">Professional Experience</h2>
+          <h2 className="section-heading">Projects</h2>
 
           <div className="timeline">
             {experience.map((job, i) => (
@@ -136,7 +169,7 @@ const EducationExperience = () => {
               >
                 <div className="timeline-dot" />
                 <div className="timeline-content">
-                  <h3>{job.role} - {job.company}</h3>
+                  <h3>{job.company} - {job.role}</h3>
                   <p className="period"><i>{job.period}</i></p>
                   <ul>
                     {job.points.map((p, idx) => <li key={idx}>{p}</li>)}

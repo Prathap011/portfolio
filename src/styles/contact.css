@@ -24,6 +24,7 @@ h2 {
 
 .subtitle {
   color: #444;
+  margin: 0px 200px;
   margin-bottom: 40px;
 }
 
@@ -90,7 +91,6 @@ h2 {
 
 input,
 textarea {
-  width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -131,4 +131,18 @@ button:hover {
   .form-row {
     flex-direction: column;
   }
+  .subtitle {
+  color: #444;
+  margin: 0px 0px;
+  margin-bottom: 20px;
+}
+
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-family: 'Times New Roman', Times, serif;
+}
+.contact-form button {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
 }

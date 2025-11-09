@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import "../styles/contact.css";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import GradientText from '../animations/GradientText';
+import GradientText from "../animations/GradientText";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +24,6 @@ const Contact = () => {
       setStatus("⚠ Please fill in all required fields.");
       return false;
     }
-    // Simple email regex
     const emailRegex = /\S+@\S+\.\S+/;
     if (!emailRegex.test(formData.email)) {
       setStatus("⚠ Enter a valid email address.");
@@ -39,12 +38,7 @@ const Contact = () => {
     if (!validateForm()) return;
 
     emailjs
-      .send(
-        "your_service_id", // from EmailJS
-        "your_template_id",
-        formData,
-        "your_user_id"
-      )
+      .send("your_service_id", "your_template_id", formData, "your_user_id")
       .then(
         () => {
           setStatus("✅ Message sent successfully!");
@@ -69,8 +63,9 @@ const Contact = () => {
             Contact
           </GradientText>
           <p className="subtitle">
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Let’s work together to bring your ideas to life!  
+            Whether you have a project in mind, want to collaborate, or just
+            want to say hello — feel free to reach out.
           </p>
 
           <div className="contact-container">
@@ -82,7 +77,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="info-box">
-                <i><FaMapMarkerAlt /></i>
+                <i>
+                  <FaMapMarkerAlt />
+                </i>
                 <div>
                   <h4>Address</h4>
                   <p>42-1/23 Thiyagi Nadesan Street-1</p>
@@ -91,17 +88,21 @@ const Contact = () => {
               </div>
 
               <div className="info-box">
-                <i><FaPhoneAlt /></i>
+                <i>
+                  <FaPhoneAlt />
+                </i>
                 <div>
-                  <h4>Call Us</h4>
+                  <h4>Call Me</h4>
                   <p>+91-6369969439</p>
                 </div>
               </div>
 
               <div className="info-box">
-                <i><FaEnvelope /></i>
+                <i>
+                  <FaEnvelope />
+                </i>
                 <div>
-                  <h4>Email Us</h4>
+                  <h4>Email</h4>
                   <p>vjprathap35@gmail.com</p>
                 </div>
               </div>
@@ -143,7 +144,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 rows="6"
-                placeholder="Message"
+                placeholder="Write your message here..."
                 value={formData.message}
                 onChange={handleChange}
                 required

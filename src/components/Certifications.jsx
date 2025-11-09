@@ -1,73 +1,81 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/certifications.css";
-import { 
-  FaDatabase, 
-  FaCode, 
-  FaCloud, 
-  FaProjectDiagram, 
-  FaCalendarCheck, 
-  FaComments 
+import {
+  FaDatabase,
+  FaCode,
+  FaCloud,
+  FaProjectDiagram,
+  FaCalendarCheck,
+  FaComments,
 } from "react-icons/fa";
 import GlassIcons from "../animations/GlassIcons";
-import GradientText from '../animations/GradientText';
+import GradientText from "../animations/GradientText";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiBmcsoftware } from "react-icons/si";
 
 const certifications = [
   {
-    title: "Oracle SQL - Udemy",
-    file: "/certs/cert1.pdf",
-    icon: <FaDatabase />
+    title: "HTML and CSS",
+    file: "/certificates/HTML and CSS certificate.pdf",
+    description: "Learned to build responsive layouts using semantic HTML and modern CSS techniques.",
+    icon: <FaCode />,
   },
   {
-    title: "HTML, CSS, JavaScript - Udemy",
-    file: "/certs/cert2.pdf",
-    icon: <FaCode />
+    title: "JavaScript",
+    file: "/certificates/Javascript certificate.pdf",
+    description: "Gained hands-on experience with ES6+, DOM manipulation, and dynamic interactivity.",
+    icon: <FaCloud />,
   },
   {
-    title: "AWS Cloud Foundations",
-    file: "/certs/cert3.pdf",
-    icon: <FaCloud />
+    title: "Oracle SQL",
+    file: "/certificates/Oracle SQL certificate.pdf",
+    description: "Mastered SQL fundamentals — writing queries, joins, and managing relational databases.",
+    icon: <FaDatabase />,
   },
   {
     title: "Git & GitHub",
-    file: "/certs/cert4.pdf",
-    icon: <FaProjectDiagram />
+    file: "/certificates/Git certificate.pdf",
+    description: "Learned version control, branching, merging, and collaboration with GitHub.",
+    icon: <FaProjectDiagram />,
   },
   {
     title: "Agile Methodologies",
-    file: "/certs/cert5.pdf",
-    icon: <FaCalendarCheck />
+    file: "/certificates/Agile certificate.pdf",
+    description: "Understood Scrum, sprint planning, and iterative software development principles.",
+    icon: <FaCalendarCheck />,
   },
   {
-    title: "Communication Skills",
-    file: "/certs/cert6.pdf",
-    icon: <FaComments />
-  }
+    title: "Software Engineering",
+    file: "/certificates/Software Engineering certificate.pdf",
+    description: "Explored software lifecycle, planning, and building scalable applications.",
+    icon: <FaComments />,
+  },
 ];
 
-// One-to-one items (matches with certifications by index)
 const items = [
-  { icon: <FaDatabase />, color: 'blue', label: 'Files' },
-  { icon: <FaCode />, color: 'purple', label: 'Books' },
-  { icon: <FaCloud />, color: 'red', label: 'Health' },
-  { icon: <FaProjectDiagram />, color: 'indigo', label: 'Weather' },
-  { icon: <FaCalendarCheck />, color: 'orange', label: 'Notes' },
-  { icon: <FaComments />, color: 'green', label: 'Stats' },
+  { icon: <FaCode />, color: "purple", label: "Books" },
+  { icon: <IoLogoJavascript />, color: "red", label: "Health" },
+  { icon: <FaDatabase />, color: "blue", label: "Files" },
+  { icon: <FaProjectDiagram />, color: "indigo", label: "Weather" },
+  { icon: <FaCalendarCheck />, color: "orange", label: "Notes" },
+  { icon: <SiBmcsoftware />, color: "green", label: "Stats" },
 ];
 
 const Certifications = () => {
   return (
     <section id="certifications" className="certifications-section">
-      
       <GradientText
-              colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-              animationSpeed={3}
-              showBorder={false}
-              className="about-title"
-            >
-              Certifications
-            </GradientText>
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="about-title"
+      >
+        Certifications
+      </GradientText>
+
       <div className="cert-grid">
+        
         {certifications.map((cert, i) => (
           <motion.a
             key={i}
@@ -78,11 +86,12 @@ const Certifications = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
           >
-            {/* GlassIcons for each card */}
+            <div className="cert-style">
             <GlassIcons items={[items[i]]} className="custom-class" />
+            </div>
 
             <h3>{cert.title}</h3>
-            <p>Click to download certificate</p>
+            <p className="cert-desc">{cert.description}</p>
           </motion.a>
         ))}
       </div>

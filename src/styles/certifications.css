@@ -33,22 +33,52 @@
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   justify-content: center;
   align-items: stretch;
+}
+.cert-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::after {
+  content: "Tap to download";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #4079ff, #40ffaa);
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  transition: bottom 0.3s ease;
+  opacity: 0;
+}
+
+.cert-card:hover::after {
+  bottom: 0;
+  opacity: 1;
 }
 
 .cert-card {
   background: #fff;
   border-radius: 12px;
-  padding: 30px 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  padding: 0px 30px;
+  padding-bottom: 35px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   text-decoration: none;
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.cert-style{
+  padding-left: 40%;
+}
 .cert-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.12);
@@ -58,6 +88,13 @@
   font-size: 2.5rem;
   color: #007bff;
   margin-bottom: 15px;
+}
+.cert-card .glass-icons,
+.cert-card svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;        /* Increased size */
 }
 
 .cert-card h3 {
@@ -72,6 +109,14 @@
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
+  .cert-card {
+    padding: 20px 15px;
+  }
+}
+@media (max-width: 600px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
   .cert-card {
     padding: 20px 15px;
   }
