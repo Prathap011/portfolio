@@ -69,11 +69,25 @@ const Hero = () => {
         </motion.p>
 
         {/* Social icons */}
-        <div className="social-links">
+        {/* <div className="social-links">
           <FaXTwitter />
           <FaFacebook />
           <FaInstagram />
           <FaLinkedin />
+        </div> */}
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/prathap-s-80667a197" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://www.instagram.com/prathap_here_" target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
+          </a>
+          <a href="https://www.facebook.com/share/1W5iQBnvFj/" target="_blank" rel="noopener noreferrer">
+            <FaFacebook />
+          </a>
+          <a href="https://x.com/Chillbr79866096" target="_blank" rel="noopener noreferrer">
+            <FaXTwitter />
+          </a>
         </div>
       </div>
 

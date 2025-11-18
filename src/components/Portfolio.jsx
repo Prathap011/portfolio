@@ -6,38 +6,45 @@ import GradientText from '../animations/GradientText';
 const portfolioData = [
   {
     id: 1,
-    title: "Product 1",
-    description: "Lorem ipsum, dolor sit",
+    title: "JustPlay",
+    description: "Vendor can register the turf and buyer can book their turf",
     image: "/justplay.png",
-    link: "https://example.com/product1",
+    link: "https://ttdc.skeintech.com:4411/",
   },
   {
     id: 2,
-    title: "Product 2",
-    description: "Creative branding",
-    image: "/justplay.png",
-    link: "https://example.com/product2",
+    title: "Gohawq Admin",
+    description: "He can manage the vendor account and help the vendor support",
+    image: "/admin1.png",
+    link: "https://admin.dev.gohawq.com/",
   },
   {
     id: 3,
-    title: "Product 3",
-    description: "UI/UX project",
-    image: "/justplay.png",
-    link: "https://example.com/product3",
+    title: "Gohawq Vendor",
+    description: "He can register the sale of products, do live sales, manage orders, and chat with buyers",
+    image: "/vendor1.png",
+    link: "https://vendor.dev.gohawq.com/",
   },
   {
     id: 4,
-    title: "Product 4",
-    description: "Design inspiration",
-    image: "/justplay.png",
-    link: "https://example.com/product4",
+    title: "Gohawq Buyer",
+    description: "He can sign up, purchase products online, and chat with vendors",
+    image: "/buyer1.png",
+    link: "https://buyer.dev.gohawq.com/",
   },
   {
     id: 5,
-    title: "Product 5",
-    description: "Modern web app",
-    image: "/justplay.png",
-    link: "https://example.com/product5",
+    title: "PracticeTime",
+    description: "Parent can sign up and attend the quiz to increase child intelligence",
+    image: "/practicetime.png",
+    link: "https://example.com/product1",
+  },
+  {
+    id: 6,
+    title: "ProductTime Admin",
+    description: "Admin can upload questions and modify questions and child quiz details",
+    image: "/practicetimeadmin.png",
+    link: "https://example.com/product1",
   },
 ];
 
@@ -52,48 +59,49 @@ const cardVariants = {
 
 export default function Portfolio() {
   return (
-      <section className="portfolio-section">
-         <GradientText
-                      colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-                      animationSpeed={3}
-                      showBorder={false}
-                      className="about-title"
-                    >
-                      Portfolio
-                    </GradientText>
-        <p className="portfolio-subtitle">
-          Some of my recent works with creative ideas and modern design.
-        </p>
+    <section className="portfolio-section">
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        showBorder={false}
+        className="about-title"
+      >
+        Portfolio
+      </GradientText>
+      <p className="portfolio-subtitle">
+        Some of my recent works with creative ideas and modern design.
+      </p>
 
-        <div className="portfolio-grid">
-  {portfolioData.map((item, index) => (
-    <motion.a
-      key={item.id}
-      href={item.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`portfolio-card ${index === 0 ? "tall-card" : ""}`} // first one taller
-      custom={index}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={cardVariants}
-    >
-      <img src={item.image} alt={item.title} className="portfolio-image" />
+      <div className="portfolio-grid">
+        {portfolioData.map((item, index) => (
+          <motion.a
+            key={item.id}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            // className={`portfolio-card ${index === 0 ? "tall-card" : ""}`} 
+            className={`portfolio-card`} 
+            custom={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={cardVariants}
+          >
+            <img src={item.image} alt={item.title} className="portfolio-image" />
 
-      {/* Hover content */}
-      <div className="portfolio-content">
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
-        <div className="portfolio-icons">
-          <span>🔍</span>
-          <span>🔗</span>
-        </div>
+            {/* Hover content */}
+            <div className="portfolio-content">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <div className="portfolio-icons">
+                {/* <span>🔍</span>
+                <span>🔗</span> */}
+              </div>
+            </div>
+          </motion.a>
+        ))}
       </div>
-    </motion.a>
-  ))}
-</div>
 
-      </section>
+    </section>
   );
 }
