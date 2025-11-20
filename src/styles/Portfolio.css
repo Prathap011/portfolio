@@ -20,9 +20,31 @@
 .portfolio-grid {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+  grid-template-columns: repeat(3, 1fr); /* default 3 columns */
   grid-auto-rows: 300px; /* base height */
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-auto-rows: 250px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 column - stacked vertically */
+    grid-auto-rows: 250px;
+  }
+
+  /* Optional: make tall card normal height on mobile */
+  .portfolio-card.tall-card {
+    grid-row: span 1;
+  }
+}
+
 
 /* Card */
 .portfolio-card {
@@ -87,4 +109,29 @@
   display: flex;
   gap: 0.8rem;
   font-size: 1.2rem;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* stacked */
+    grid-auto-rows: auto; /* let height adjust */
+  }
+
+  /* Make tall card normal height */
+  .portfolio-card.tall-card {
+    grid-row: span 1;
+  }
+
+  /* Always show content on mobile */
+  .portfolio-content {
+    position: relative; /* remove absolute positioning */
+    transform: translateY(0); /* always visible */
+    background: rgba(255, 255, 255, 0.95); /* optional: slightly transparent */
+    padding: 0.8rem;
+  }
+
+  .portfolio-image {
+    height: 200px; /* optional: adjust image height for mobile */
+  }
 }

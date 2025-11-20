@@ -37,14 +37,14 @@ const portfolioData = [
     title: "PracticeTime",
     description: "Parent can sign up and attend the quiz to increase child intelligence",
     image: "/practicetime.png",
-    link: "https://example.com/product1",
+    link: "https://www.practicetime.ai/",
   },
   {
     id: 6,
     title: "ProductTime Admin",
     description: "Admin can upload questions and modify questions and child quiz details",
-    image: "/practicetimeadmin.png",
-    link: "https://example.com/product1",
+    image: "/practicetimeadmin1.png",
+    link: "https://practicetime-admin.vercel.app/",
   },
 ];
 

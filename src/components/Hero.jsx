@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/hero.css";
-import { FaXTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { Typewriter } from "react-simple-typewriter";
 import SplitText from "../animations/SplitText";
 import Particles from "../animations/Particles";
@@ -79,14 +79,12 @@ const Hero = () => {
           <a href="https://www.linkedin.com/in/prathap-s-80667a197" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
+          <a href="https://github.com/Prathap207" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
           <a href="https://www.instagram.com/prathap_here_" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
           <a href="https://www.facebook.com/share/1W5iQBnvFj/" target="_blank" rel="noopener noreferrer">
             <FaFacebook />
-          </a>
-          <a href="https://x.com/Chillbr79866096" target="_blank" rel="noopener noreferrer">
-            <FaXTwitter />
           </a>
         </div>
       </div>
