@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/skills.css";
 import GradientText from '../animations/GradientText';
+import ProgressLine from "./ProgressLine";
 
 const Skills = () => {
   const skills = [
@@ -24,6 +25,15 @@ const Skills = () => {
       <p className="skills-subtitle">
         Proficient in designing, building, and maintaining web and mobile applications
       </p>
+      <ProgressLine
+        label="Full progressbar"
+        visualParts={[
+          {
+            percentage: "100%",
+            color: "tan"
+          }
+        ]}
+      />
 
       <div className="skills-container">
         {skills.map((skill) => (

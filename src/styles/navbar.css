@@ -91,6 +91,7 @@
 .mobile-menu-icon {
   position: fixed;
   top: 20px;
+  left: 20px;
   background: #007bff;
   color: white;
   border-radius: 50%;
@@ -112,11 +113,11 @@
   position: fixed;
   top: 0;
   left: -100%;
-  width: 270px;
+  width: 180px;
   height: 100vh;
   background: white;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.2);
-  padding: 60px 20px 20px;
+  padding: 40px 20px 20px;
   transition: left 0.3s ease-in-out;
   z-index: 1500;
 }
@@ -137,7 +138,7 @@
 }
 
 .mobile-drawer .nav-link {
-  width: 40%;
+  width: 60%;
   display: flex;
   align-items: center;
   gap: 12px;

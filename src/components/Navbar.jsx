@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FaHome,
   FaUser,
@@ -7,15 +7,14 @@ import {
   FaEnvelope,
   FaListUl,
   FaBars,
-  FaTimes,
 } from "react-icons/fa";
 import { Link } from "react-scroll";
 import "../styles/navbar.css";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState("home");
+  const drawerRef = useRef(null);
 
   const navItems = [
     { id: "home", label: "Home", icon: <FaHome /> },
@@ -36,20 +35,32 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Close drawer when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (drawerRef.current && !drawerRef.current.contains(event.target)) {
+        setDrawerOpen(false);
+      }
+    };
+    if (drawerOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [drawerOpen]);
 
   return (
     <>
-      {/* Mobile toggle button */}
-      <div
-        className={`mobile-menu-icon ${isOpen ? "right" : "left"}`}
-        onClick={() => {
-          setIsOpen(!isOpen);
-          setDrawerOpen(!drawerOpen);
-        }}
-      >
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </div>
-
+      {/* Mobile toggle button (only when drawer is closed) */}
+      {!drawerOpen && (
+        <div
+          className="mobile-menu-icon"
+          onClick={() => setDrawerOpen(true)}
+        >
+          <FaBars />
+        </div>
+      )}
 
       {/* Desktop Sidebar */}
       <nav className="sidebar">
@@ -60,10 +71,10 @@ const Navbar = () => {
                 to={item.id}
                 smooth={true}
                 duration={600}
-                spy={true}                // 👈 track scroll position
-                activeClass="active"      // 👈 auto-add "active" when section is in view
+                spy={true}
+                activeClass="active"
                 className={`nav-link ${selected === item.id ? "active" : ""}`}
-                onSetActive={() => setSelected(item.id)} // keep your state in sync
+                onSetActive={() => setSelected(item.id)}
               >
                 <span className="icon">{item.icon}</span>
                 <span className="label">{item.label}</span>
@@ -74,7 +85,10 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Drawer */}
-      <div className={`mobile-drawer ${drawerOpen ? "open" : ""}`}>
+      <div
+        ref={drawerRef}
+        className={`mobile-drawer ${drawerOpen ? "open" : ""}`}
+      >
         <ul>
           {navItems.map((item) => (
             <li key={item.id}>
@@ -83,10 +97,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={600}
                 className={`nav-link ${selected === item.id ? "active" : ""}`}
-                onClick={() => {
-                  setSelected(item.id);
-                  setDrawerOpen(false);
-                }}
+                onClick={() => setDrawerOpen(false)}
               >
                 <span className="icon">{item.icon}</span>
                 <span className="label">{item.label}</span>
