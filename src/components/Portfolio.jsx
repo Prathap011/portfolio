@@ -10,7 +10,7 @@ const portfolioData = [
     description: "Vendor can register the turf and buyer can book their turf",
     image: "/justplay.png",
     link: "https://ttdc.skeintech.com:4411/",
-  },
+  },  
   {
     id: 2,
     title: "Gohawq Admin",
