@@ -23,7 +23,7 @@ const EducationExperience = () => {
       score: "93%"
     }
   ];
-   const job = [
+  const job = [
     {
       role: "Software Developer",
       company: "JustLogix Infotech Private Limited",
@@ -51,9 +51,17 @@ const EducationExperience = () => {
       company: "JustPlay",
       period: "Nov 2024 – Jun 2025",
       points: [
-        "Developed a turf booking platform with roles for buyers, turf owners, and admins, enabling turf owners to register and manage turf details while buyers can book turfs through the website and mobile app.",
-        "Built the buyer mobile application using Flutter for Android and iOS, and implemented backend APIs with FastAPI for authentication, bookings, payments, and schedule management.",
-        "Optimized SQL queries for real-time availability checks and improved system performance while contributing to Agile sprint planning and debugging activities.",
+        "Developed a complete turf booking platform with roles for buyers, owners, and admins, including turf registration, schedule management, bookings, and payments. Built the buyer mobile app using Flutter (Android & iOS) and integrated backend APIs using FastAPI.",
+        "Improved system performance by optimizing SQL queries for real-time turf availability checks while actively contributing to Agile sprint planning, debugging, and feature enhancements."
+      ]
+    },
+    {
+      role: "React.js, Firebase",
+      company: "Practice Project",
+      period: "Jun 2025 – Aug 2025",
+      points: [
+        "Developed a quiz management system where admins can create MCQ questions, upload quizzes, and assign them to users, with real-time data handling using Firebase Realtime Database and Firestore.",
+        "Built a simple and child-friendly UI using React.js, enabling users to log in, access assigned quizzes, and submit answers seamlessly with live updates powered by Firebase."
       ]
     },
     {
@@ -102,33 +110,33 @@ const EducationExperience = () => {
               </div>
             </motion.div>
 
-            
+
 
             {/* Summary as a timeline item */}
-<div className="left-column">
-         <h2 className="section-heading">Professional Experience</h2>
+            <div className="left-column">
+              <h2 className="section-heading">Professional Experience</h2>
 
-          <div className="timeline">
-            {job.map((job, i) => (
-              <motion.div
-                key={i}
-                className="timeline-item timeline-item2"
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.45, delay: i * 0.1 }}
-              >
-                <div className="timeline-dot" />
-                <div className="timeline-content">
-                  <h3>{job.company} - {job.role}</h3>
-                  <p className="period"><i>{job.period}</i></p>
-                  <ul>
-                    {job.points.map((p, idx) => <li key={idx}>{p}</li>)}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+              <div className="timeline">
+                {job.map((job, i) => (
+                  <motion.div
+                    key={i}
+                    className="timeline-item timeline-item2"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.45, delay: i * 0.1 }}
+                  >
+                    <div className="timeline-dot" />
+                    <div className="timeline-content">
+                      <h3>{job.company} - {job.role}</h3>
+                      <p className="period"><i>{job.period}</i></p>
+                      <ul>
+                        {job.points.map((p, idx) => <li key={idx}>{p}</li>)}
+                      </ul>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
 
             {/* Education heading inside same timeline so the line continues */}
             <h2 className="section-heading">Education</h2>
@@ -150,7 +158,7 @@ const EducationExperience = () => {
                 </div>
               </motion.div>
             ))}
-            
+
           </div>
         </div>
 
