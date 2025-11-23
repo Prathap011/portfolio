@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import "../styles/portfolio.css";
+import "../styles/portfolio1.css";
 import React from "react";
 import GradientText from '../animations/GradientText';
 
