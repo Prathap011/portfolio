@@ -37,15 +37,14 @@ const EducationExperience = () => {
 
   const experience = [
     {
-      role: "Python (FastAPI)",
-      company: "Gohawk Application",
-      period: "Aug 2025 – Present",
-      points: [
-        "Built an e-commerce platform enabling buyers, vendors, and admins to interact, allowing buyers to purchase products and track orders seamlessly. Vendors can showcase products through live video demos, and buyers can purchase directly during live calls with secure checkout and authentication.",
-        "Integrated a vendor chatbot powered by a pretrained model to assist with product uploads and management.",
-        "Implemented OpenAI’s pretrained image detection API to automatically validate and categorize product images."
-      ]
-    },
+  role: "Python (FastAPI)",
+  company: "Gohawk Application",
+  period: "Aug 2025 – Present",
+  points: [
+    "Built an e-commerce platform enabling buyers, vendors, and admins to interact, including live video product demos, real-time purchasing, secure checkout, and order tracking.",
+    "Integrated a vendor support chatbot and implemented OpenAI’s image detection API to automate product image validation and categorization."
+  ]
+},
     {
       role: "Python (FastAPI), Flutter",
       company: "JustPlay",
